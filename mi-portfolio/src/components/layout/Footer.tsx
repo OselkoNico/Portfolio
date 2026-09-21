@@ -1,4 +1,5 @@
 import { MapPin, ArrowUp, Copyright, Mail } from "lucide-react";
+import { SiGithub } from "react-icons/si";
 
 export default function Footer() {
     
@@ -23,6 +24,11 @@ export default function Footer() {
                 <a href="mailto:oselfrancisco.nb@gmail.com" className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
                     <Mail size={20} /> Email
                 </a>
+
+                <a href="https://github.com/OselkoNico" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+                    <SiGithub size={20} /> GitHub
+                </a>
+
                 <button onClick={scrollToTop} className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer">
                     <ArrowUp size={20} /> Subir
                 </button>

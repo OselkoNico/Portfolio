@@ -17,7 +17,7 @@ export default function Navbar() {
     const [isCopied, setIsCopied] = useState(false);
 
     function copyWindow() {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(window.location.origin);
     setIsCopied(true);
     setTimeout(() => {
         setIsCopied(false)

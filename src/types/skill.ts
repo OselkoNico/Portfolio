@@ -1,14 +1,20 @@
-import type { IconName, IconSkill } from "./icon";
+import type { IconName, IconSkillBrand, IconSkillGeneric } from "./icon";
 
 export interface Skill {
     id: string;
-    icon: IconSkill;
+    icon: SkillIcon;
     title: string;
     subTitle?: string;
     description: string;
-    badge: string;
+    badge?: string;
+    subBadge?: {
+        label: string;
+        value: string;
+    };
     percentage?: number;
-    subSkills: string[];
+    subSkills?: string[];
+    focus?: string;
+    level?: string;
 }
 
 export interface SkillCategory {
@@ -16,3 +22,7 @@ export interface SkillCategory {
     icon: IconName;
     skills: Skill[];
 }
+
+type SkillIcon =
+  | { source: "brand"; name: IconSkillBrand }
+  | { source: "generic"; name: IconSkillGeneric };

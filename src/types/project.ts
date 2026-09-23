@@ -3,14 +3,14 @@ export interface Project {
     title: string;
     description: string;
     tag: string;
-    category: "Angular" | "React" | "Node.js & Backend" | "Full Stack";
+    category: ("Angular" | "React" | "Node.js & Backend" | "Full Stack")[];
     tech: string[];
     links: {
         label: string;
         url: string;
         icon?: "github" | "external" | "docs";
     }[];
-    repoUrl: string;
+    repoUrl?: string;
     liveUrl?: string;
     metrics?: {
         label: string;

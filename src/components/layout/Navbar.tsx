@@ -25,7 +25,7 @@ export default function Navbar() {
     }
 
     return(
-        <nav className="flex justify-between items-center px-8 py-4">
+        <nav className="flex justify-between items-center px-8 py-4 bg-[#070d18]">
 
             <div className="flex items-center gap-4">
                 <Link to="/" className="flex items-center gap-2">

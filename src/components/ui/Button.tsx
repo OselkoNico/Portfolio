@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export default function Button({ children, variant, onClick }: ButtonProps) {
     const variantStyles = {
-        primary: "text-black bg-gradient-to-r from-cyan-400 to-blue-500",
+        primary: "text-black bg-linear-to-r from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(34,211,238,0.5)]",
         secondary: "text-white bg-slate-800 border border-slate-600"
     };
 

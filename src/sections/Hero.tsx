@@ -11,8 +11,10 @@ export default function Hero() {
 
   const locationAndAvailability: string = "Sopela, España • Disponible para incorporación inmediata";
 
+  const codeValueColor = "text-cyan-300";
+
   return (
-    <div className="flex gap-8 px-8 py-6 max-w-screen-2xl mx-auto">
+    <section className="flex gap-8 px-8 py-6 max-w-screen-2xl mx-auto">
       <div className="flex-1 flex flex-col gap-6">
         <div>
           <span className="flex items-center gap-2 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700 rounded-full px-3 py-1 w-fit">
@@ -42,14 +44,14 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-lg font-semibold cursor-pointer transition-colors text-white bg-slate-800 border border-slate-600 flex items-center justify-center gap-2 w-fit">
-            <FileUser size={18} className="text-cyan-300" /> Ver CV
+            <FileUser size={18} className={codeValueColor} /> Ver CV
           </a>
         </div>
 
         <div className="flex gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col">
-              <span className={`text-2xl font-bold ${stat.highlight ? "text-cyan-300" : "text-white"}`}>
+              <span className={`text-2xl font-bold ${stat.highlight ? {codeValueColor} : "text-white"}`}>
                 {stat.value}
               </span>
               <span className="text-xs text-slate-400">{stat.label}</span>
@@ -73,7 +75,7 @@ export default function Hero() {
               <div>
                 <div className="flex items-center gap-1">
                   <span className="font-bold text-white">Osel F. Nicolás Benitez</span>
-                  <BadgeCheck size={20} className="text-cyan-300" />
+                  <BadgeCheck size={20} className={codeValueColor} />
                 </div>
                 <span className="text-xs text-slate-400">oselfnicolas.dev • v2.5.0</span>
               </div>
@@ -82,23 +84,23 @@ export default function Hero() {
             <CodeWindow fileName="developer.config.ts">
                 <p>
                     <span className="text-purple-300">const </span>
-                    <span className="text-cyan-300">developer</span>
-                    : <span className="text-cyan-300">FullStackProfile</span>
+                    <span className={codeValueColor}>developer</span>
+                    : <span className={codeValueColor}>FullStackProfile</span>
                     = {`{`}
                 </p>
                 <p className="pl-4">
-                    name: <span className="text-cyan-300">"Osel F. Nicolás Benitez"</span>,
+                    name: <span className={codeValueColor}>"Osel F. Nicolás Benitez"</span>,
                 </p>
                 <p className="pl-4">
-                    location: <span className="text-cyan-300">"Sopela, Bizkaia"</span>,
+                    location: <span className={codeValueColor}>"Sopela, Bizkaia"</span>,
                 </p>
                 <p className="pl-4">primaryStack: [</p>
                 <p className="pl-8">
-                    <span className="text-cyan-300">"JavaScript", "TypeScript", "React", "Angular", "Node.js", "API REST"</span>
+                    <span className={codeValueColor}>"JavaScript", "TypeScript", "React", "Angular", "Node.js", "API REST"</span>
                 </p>
                 <p className="pl-4">],</p>
                 <p className="pl-4">
-                    engineeringRigour: <span className="text-cyan-300">100</span>,
+                    engineeringRigour: <span className={codeValueColor}>100</span>,
                 </p>
                 <p className="pl-4">
                     availableToHire: <span className="text-cyan-300 font-bold">true</span>
@@ -108,13 +110,13 @@ export default function Hero() {
 
             <div className="flex items-center justify-between text-xs bg-slate-900 border border-slate-700 rounded-lg px-4 py-3">
               <span className="flex items-center gap-2 text-slate-300">
-                <CircleCheck size={18} className="text-cyan-300" /> Vitest Suite: 42 passed
+                <CircleCheck size={18} className={codeValueColor} /> Vitest Suite: 42 passed
               </span>
               <span className="text-cyan-300 font-medium">READY</span>
             </div>
           </div>
         </Card>
       </div>
-    </div>
+    </section>
   );
 }

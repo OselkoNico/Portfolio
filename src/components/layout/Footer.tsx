@@ -11,7 +11,7 @@ export default function Footer() {
         <footer className="flex justify-between items-center px-8 py-6 bg-[#070d18]">
             <div className="flex flex-col gap-1">
                 <p className="flex items-center gap-2">
-                    <MapPin size={14} />
+                    <MapPin size={14} className="text-cyan-300"/>
                     Sopela, Bizcaia • FullStack Developer
                 </p>
                 <p className="flex items-center gap-2">

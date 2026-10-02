@@ -51,7 +51,7 @@ export default function Hero() {
         <div className="flex gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col">
-              <span className={`text-2xl font-bold ${stat.highlight ? {codeValueColor} : "text-white"}`}>
+              <span className={`text-2xl font-bold ${stat.highlight ? codeValueColor : "text-white"}`}>
                 {stat.value}
               </span>
               <span className="text-xs text-slate-400">{stat.label}</span>

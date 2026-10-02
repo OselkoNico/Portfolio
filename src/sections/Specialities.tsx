@@ -4,7 +4,7 @@ import { iconNameMap } from "../utils/iconMaps";
 
 export default function Specialities() {
   return (
-    <section className="bg-[#070d18]">
+    <section className="bg-[#070d18] pb-10">
       <div className="flex justify-between gap-8 px-8 py-6 max-w-screen-2xl mx-auto">
         <div className="flex-1 flex flex-col gap-2 py-16">
           <div className="flex items-center gap-2">

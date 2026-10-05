@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Terminal, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { projects } from "../data/projects";
 import Card from "../components/ui/Card";
+import CtaBanner from "./CtaBanner";
 
 export default function FeaturedProjects() {
 
@@ -63,25 +64,13 @@ export default function FeaturedProjects() {
                 ))}
             </div>
             
-            <div className="flex items-center justify-between gap-8 px-8 py-6 max-w-[1476px] mx-auto bg-slate-800/50 border border-slate-700 rounded-xl mt-6">
-                <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-700">
-                        <Terminal size={20} className="text-cyan-400" />
-                    </div>
-                    <div>
-                        <h3 className="text-base font-bold text-white">¿Quieres ver la arquitectura completa?</h3>
-                        <p className="text-sm text-slate-400">Revisa los repositorios en GitHub, suites de pruebas unitarias y diagramas de flujo.</p>
-                    </div>
-                </div>
-
-                <a
-                    href="https://github.com/OselkoNico"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-slate-300 bg-slate-700 rounded-lg px-4 py-2 hover:bg-slate-600 transition-colors flex items-center gap-2 whitespace-nowrap">
-                        Ver repositorios en GitHub <ArrowUpRight size={16} />
-                </a>
-            </div>
+            <CtaBanner 
+                title="¿Quieres ver la arquitectura completa?"
+                description="Revisa los repositorios en GitHub, suites de pruebas unitarias y diagramas de flujo."
+                buttonLabel="Ver repositorios en GitHub"
+                buttonUrl="https://github.com/OselkoNico"
+            />
+            
         </section>
     )
 }

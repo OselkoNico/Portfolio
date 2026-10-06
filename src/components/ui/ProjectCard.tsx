@@ -1,12 +1,14 @@
 import Card from "./Card";
 import { SiGithub } from "react-icons/si";
 import type { Project } from "../../types/project";
+import { Code } from "lucide-react";
 
 interface ProjectCardProps {
     project: Project;
+    detailed?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, detailed }: ProjectCardProps) {
     return(
         <Card className="flex flex-col h-full">
                     <div className="flex flex-col gap-4 flex-1">
@@ -15,7 +17,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         </span>
 
                         <h3 className="text-lg font-bold text-white">{project.title}</h3>
-                        <p className="text-sm text-slate-300/90">{project.description}</p>
+                        <p className="text-sm text-slate-300/90">{detailed ? (project.longDescription ?? project.description) : project.description}</p>
 
                         <div className="flex flex-wrap gap-2">
                             {project.tech.map((tech) => (
@@ -33,9 +35,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-slate-300 bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 hover:bg-slate-800 transition-colors">
-                                    {link.icon === "github" && <SiGithub size={16} />}
-                                    {link.label}
+                                className={`flex items-center gap-2 text-sm rounded-lg px-4 py-2 transition-colors ${
+                                    detailed
+                                        ? "text-black bg-linear-to-r from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(34,211,238,0.5)] hover:brightness-110"
+                                        : "text-slate-300 bg-slate-700 border border-slate-700 hover:bg-slate-800"
+                                    }`}
+                                >
+                                    {detailed && link.icon === "github" ? (
+                                        <>
+                                            <Code size={16} /> Código en GitHub
+                                        </>
+                                    ) : (
+                                        <>
+                                            {link.icon === "github" && <SiGithub size={16} />}
+                                            {link.label}
+                                        </>
+                                    )}
                             </a>
                         ))}
                     </div>

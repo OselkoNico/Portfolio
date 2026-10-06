@@ -2,6 +2,7 @@ export interface Project {
     id: string;
     title: string;
     description: string;
+    longDescription?: string;
     tag: string;
     category: ("Angular" | "React" | "Node.js & Backend" | "Full Stack")[];
     tech: string[];
